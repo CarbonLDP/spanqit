@@ -28,8 +28,8 @@ public interface TriplePattern extends GraphPattern {
 	 * 
 	 * @return this triple pattern
 	 */
-	default public TriplePattern andHas(RdfPredicate predicate, RdfObject... objects) {
-		return andHas(Rdf.predicateObjectList(predicate, objects));
+	default public TriplePattern and(RdfPredicate predicate, RdfObject... objects) {
+		return and(Rdf.predicateObjectList(predicate, objects));
 	}
 	
 	/**
@@ -40,10 +40,10 @@ public interface TriplePattern extends GraphPattern {
 	 * 
 	 * @return this triple pattern
 	 */
-	public TriplePattern andHas(RdfPredicateObjectList... lists);
+	public TriplePattern and(RdfPredicateObjectList... lists);
 	
 	/**
-	 * Convenience version of {@link #andHas(RdfPredicate, RdfObject...)} that takes Strings
+	 * Convenience version of {@link #and(RdfPredicate, RdfObject...)} that takes Strings
 	 * and converts them to StringLiterals
 	 * 
 	 * @param predicate the predicate to use to describe this triple pattern's subject
@@ -51,12 +51,12 @@ public interface TriplePattern extends GraphPattern {
 	 *  
 	 * @return this triple pattern
 	 */
-	default TriplePattern andHas(RdfPredicate predicate, String... objects) {
-		return andHas(predicate, toRdfLiteralArray(objects));
+	default TriplePattern and(RdfPredicate predicate, String... objects) {
+		return and(predicate, toRdfLiteralArray(objects));
 	};
 	
 	/**
-	 * Convenience version of {@link #andHas(RdfPredicate, RdfObject...)} that takes Boolean
+	 * Convenience version of {@link #and(RdfPredicate, RdfObject...)} that takes Boolean
 	 * and converts them to BooleanLiterals
 	 * 
 	 * @param predicate the predicate to use to describe this triple pattern's subject
@@ -64,12 +64,12 @@ public interface TriplePattern extends GraphPattern {
 	 *  
 	 * @return this triple pattern
 	 */
-	default TriplePattern andHas(RdfPredicate predicate, Boolean... objects) {
-		return andHas(predicate, toRdfLiteralArray(objects));
+	default TriplePattern and(RdfPredicate predicate, Boolean... objects) {
+		return and(predicate, toRdfLiteralArray(objects));
 	};
 	
 	/**
-	 * Convenience version of {@link #andHas(RdfPredicate, RdfObject...)} that takes Numbers
+	 * Convenience version of {@link #and(RdfPredicate, RdfObject...)} that takes Numbers
 	 * and converts them to NumberLiterals
 	 * 
 	 * @param predicate the predicate to use to describe this triple pattern's subject
@@ -77,8 +77,8 @@ public interface TriplePattern extends GraphPattern {
 	 *  
 	 * @return this triple pattern
 	 */
-	default TriplePattern andHas(RdfPredicate predicate, Number... objects) {
-		return andHas(predicate, toRdfLiteralArray(objects));
+	default TriplePattern and(RdfPredicate predicate, Number... objects) {
+		return and(predicate, toRdfLiteralArray(objects));
 	};
 	
 	/**
@@ -92,6 +92,6 @@ public interface TriplePattern extends GraphPattern {
 	 * 		RDF Type abbreviation</a>
 	 */
 	default TriplePattern andIsA(RdfObject object) {
-		return andHas(RdfPredicate.a, object);
+		return and(RdfPredicate.a, object);
 	}
 }

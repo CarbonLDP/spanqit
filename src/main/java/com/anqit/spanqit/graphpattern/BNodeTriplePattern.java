@@ -17,7 +17,7 @@ class BNodeTriplePattern implements TriplePattern {
 	}
 
 	@Override
-	public BNodeTriplePattern andHas(RdfPredicateObjectList... lists) {
+	public BNodeTriplePattern and(RdfPredicateObjectList... lists) {
 		bnode.andHas(lists);
 
 		return this;

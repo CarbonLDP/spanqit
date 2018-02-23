@@ -20,16 +20,16 @@ class TriplesSameSubject implements TriplePattern {
 
 	TriplesSameSubject(RdfSubject subject, RdfPredicate predicate, RdfObject... objects) {
 		this.subject = subject;
-		andHas(predicate, objects);
+		and(predicate, objects);
 	}
 	
 	TriplesSameSubject(RdfSubject subject, RdfPredicateObjectList... lists) {
 		this.subject = subject;
-		andHas(lists);
+		and(lists);
 	}
 	
 	@Override
-	public TriplesSameSubject andHas(RdfPredicateObjectList... lists) {
+	public TriplesSameSubject and(RdfPredicateObjectList... lists) {
 		predicateObjectLists.andHas(lists);
 		
 		return this;
