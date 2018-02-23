@@ -9,7 +9,7 @@ import com.anqit.spanqit.graphpattern.TriplePattern;
  */
 public class TriplesTemplate extends QueryElementCollection<TriplePattern> {
 	TriplesTemplate(TriplePattern... triples) {
-		super(" .\n");
+		super(" \n");
 		and(triples);
 	}
 
